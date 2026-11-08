@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Fonts for Hero & Executive Summary: Newsreader & Instrument Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
   <!-- FontAwesome 6 Pro CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
@@ -165,228 +168,434 @@
       }
     }
   </style>
+  <script>document.documentElement.classList.add('xp-js');</script>
+  <style>
+    /* ==========================================================
+       Hero + Executive Summary — design from optional.html.
+       Every rule is scoped under .xp so Tailwind sections are untouched.
+       Theme follows main.html's toggle (html.dark).
+       ========================================================== */
+    .xp {
+      --bg: #FAF9F6; --bg-alt: #F2F0EB; --surface: #FFFFFF;
+      --ink: #0E1A2B; --ink-2: #354152; --muted: #5F6B7B;
+      --line: #E3E0D8; --line-strong: #CDC7BB;
+      --accent: #7F6026; --accent-soft: rgba(127, 96, 38, 0.09);
+      --serif: "Newsreader", Georgia, "Times New Roman", serif;
+      --sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --maxw: 1200px; --gutter: clamp(16px, 4vw, 40px); --radius: 2px;
+      --header-h: 80px;
+      background: var(--bg); color: var(--ink-2);
+      font: 400 16px/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+      transition: background-color .3s ease, color .3s ease;
+    }
+    @media (min-width: 640px) { .xp { --header-h: 96px; } }
+    html.dark .xp {
+      --bg: #0A1018; --bg-alt: #0D141E; --surface: #101924;
+      --ink: #EDEFF3; --ink-2: #C3CAD4; --muted: #8E98A6;
+      --line: #1D2836; --line-strong: #2C3A4B;
+      --accent: #CDAE72; --accent-soft: rgba(205, 174, 114, 0.11);
+    }
+    .xp *, .xp *::before, .xp *::after { box-sizing: border-box; }
+    .xp img { max-width: 100%; display: block; }
+    .xp a { color: inherit; }
+    .xp h1, .xp h2, .xp h3 { font-family: var(--serif); color: var(--ink); font-weight: 500; margin: 0; line-height: 1.15; letter-spacing: -0.012em; }
+    .xp p, .xp dl, .xp dd, .xp figure, .xp blockquote { margin: 0; }
+    .xp strong { color: var(--ink); font-weight: 600; }
+    .xp .num { font-variant-numeric: lining-nums tabular-nums; }
+    .xp .xp-container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+    .xp .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; padding: 0; margin: -1px; }
+    .xp :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 1px; }
+    .xp .icon { width: 18px; height: 18px; flex: none; display: inline-block; }
+    .xp .icon-sm { width: 15px; height: 15px; }
+
+    .xp .eyebrow { display: inline-flex; align-items: center; gap: 10px; font: 600 12px/1.4 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+    .xp .eyebrow .idx { color: var(--muted); font-weight: 500; }
+    .xp section[id] { scroll-margin-top: var(--header-h); }
+    .xp .section { padding: clamp(80px, 10vw, 132px) 0; border-top: 1px solid var(--line); }
+
+    .xp .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; font: 600 14px/1 var(--sans); letter-spacing: 0.01em; border-radius: var(--radius); border: 1px solid transparent; text-decoration: none; cursor: pointer; transition: background-color .2s ease, border-color .2s ease, color .2s ease; }
+    .xp .btn-primary { background: var(--ink); color: var(--bg); }
+    .xp .btn-primary:hover { background: var(--accent); color: #fff; }
+    html.dark .xp .btn-primary:hover { color: #0A1018; }
+    .xp .btn-secondary { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+    .xp .btn-secondary:hover { border-color: var(--ink); }
+
+    /* Hero (top padding clears main.html's fixed header) */
+    .xp .hero { padding: calc(var(--header-h) + clamp(48px, 7vw, 96px)) 0 0; position: relative; }
+    .xp .hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(40px, 6vw, 88px); align-items: center; }
+    .xp .hero h1 { font-size: clamp(52px, 8vw, 104px); font-weight: 400; letter-spacing: -0.025em; line-height: 0.98; margin-top: 22px; }
+    .xp .hero-statement { font: 400 clamp(22px, 2.6vw, 31px)/1.3 var(--serif); color: var(--ink); margin-top: 22px; max-width: 30ch; }
+    .xp .hero-statement em { font-style: italic; color: var(--accent); }
+    .xp .hero-lede { margin-top: 24px; font-size: 17px; line-height: 1.7; max-width: 60ch; }
+    .xp .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+    .xp .hero-meta { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+    .xp .hero-meta span, .xp .hero-meta a { display: inline-flex; align-items: center; gap: 8px; }
+    .xp .hero-meta a { color: var(--ink-2); text-decoration: none; }
+    .xp .hero-meta a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+    .xp .portrait { position: relative; }
+    .xp .portrait-frame { position: relative; background: var(--bg-alt); border: 1px solid var(--line); overflow: hidden; }
+    .xp .portrait-frame img { width: 100%; height: auto; max-height: 640px; object-fit: cover; object-position: top center; }
+    .xp .portrait-fallback { display: none; aspect-ratio: 4 / 5; align-items: center; justify-content: center; font: 400 72px/1 var(--serif); color: var(--muted); letter-spacing: 0.08em; }
+    .xp .portrait.no-image .portrait-fallback { display: flex; }
+    .xp .portrait.no-image img { display: none; }
+    .xp .portrait-rule { position: absolute; left: -14px; top: 28px; bottom: -14px; width: 1px; background: var(--accent); opacity: .55; }
+    .xp .portrait figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0 0; font-size: 13px; color: var(--muted); }
+    .xp .portrait figcaption strong { font: 500 17px/1.3 var(--serif); color: var(--ink); display: block; }
+
+    .xp .key-figures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(56px, 8vw, 96px); border-top: 1px solid var(--line-strong); }
+    .xp .key-figure { padding: 28px 28px 36px 0; }
+    .xp .key-figure + .key-figure { padding-left: 28px; border-left: 1px solid var(--line); }
+    .xp .key-figure .value { display: block; font: 400 clamp(28px, 3.4vw, 46px)/1 var(--serif); color: var(--ink); letter-spacing: -0.02em; white-space: nowrap; }
+    .xp .key-figure .label { display: block; margin-top: 12px; font-size: 14px; color: var(--muted); line-height: 1.5; max-width: 30ch; }
+
+    /* Executive profile */
+    .xp .profile-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 7vw, 96px); }
+    .xp .mandate { border-left: 2px solid var(--accent); padding: 4px 0 4px 28px; }
+    .xp .mandate p { font: 400 clamp(22px, 2.3vw, 28px)/1.35 var(--serif); color: var(--ink); }
+    .xp .mandate footer { margin-top: 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; }
+    .xp .glance { margin-top: 48px; border-top: 1px solid var(--line); }
+    .xp .glance div { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .xp .glance dt { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+    .xp .glance dd { font-size: 15px; color: var(--ink); }
+    .xp .profile-body p { font-size: 18px; line-height: 1.75; }
+    .xp .profile-body p + p { margin-top: 22px; }
+    .xp .profile-body p:first-child::first-letter { float: left; font: 400 76px/0.82 var(--serif); color: var(--ink); padding: 8px 12px 0 0; }
+
+    /* Motion */
+    .xp-js .xp .reveal { opacity: 0; transform: translateY(14px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+    .xp-js .xp .reveal.is-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .xp *, .xp *::before, .xp *::after { transition-duration: .01ms !important; }
+      .xp-js .xp .reveal { opacity: 1; transform: none; }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .xp .hero-grid, .xp .profile-grid { grid-template-columns: 1fr; }
+      .xp .portrait { max-width: 460px; }
+      .xp .portrait-rule { display: none; }
+      .xp .key-figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .xp .key-figure:nth-child(3) { padding-left: 0; border-left: 0; }
+      .xp .key-figure:nth-child(n+3) { border-top: 1px solid var(--line); }
+    }
+    @media (max-width: 640px) {
+      .xp { font-size: 15.5px; }
+      .xp .glance div { grid-template-columns: 1fr; gap: 4px; }
+      .xp .key-figure { padding: 22px 14px 26px 0; }
+      .xp .key-figure + .key-figure { padding-left: 14px; }
+      .xp .key-figure:nth-child(3) { padding-left: 0; }
+      .xp .key-figure .label { font-size: 13px; }
+      .xp .hero-actions .btn { flex: 1 1 100%; }
+      .xp .profile-body p { font-size: 17px; }
+      .xp .profile-body p:first-child::first-letter { font-size: 62px; }
+      .xp .portrait figcaption { flex-direction: column; gap: 4px; }
+    }
+
+    /* Print */
+    @media print {
+      .xp, html.dark .xp { --bg: #fff; --bg-alt: #fff; --surface: #fff; --ink: #000; --ink-2: #222; --muted: #555; --line: #ddd; --line-strong: #bbb; --accent: #6b5020; background: #fff; }
+      .xp .hero { padding-top: 0; }
+      .xp .hero h1 { font-size: 40pt; }
+      .xp .hero-actions { display: none !important; }
+      .xp .portrait { max-width: 200px; }
+      .xp .portrait-rule, .xp .portrait.no-image { display: none; }
+      .xp-js .xp .reveal { opacity: 1 !important; transform: none !important; }
+      .xp .section { padding: 28px 0; }
+      .xp .mandate footer { display: block !important; }
+      .xp .key-figures, .xp .glance, .xp .mandate { break-inside: avoid; }
+      .xp .profile-body p:first-child::first-letter { float: none; font: inherit; padding: 0; }
+    }
+
+    /* ==========================================================
+       Header — design from optional.html (scoped: .xp.xp-header)
+       ========================================================== */
+    .xp.xp-header {
+      --header-h: 72px;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      backdrop-filter: saturate(140%) blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease, background-color .3s ease;
+    }
+    @supports not (background: color-mix(in srgb, red 50%, transparent)) { .xp.xp-header { background: var(--bg); } }
+    .xp.xp-header.is-scrolled { border-bottom-color: var(--line); }
+    .xp-header .header-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+
+    .xp-header .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; min-width: 0; flex: none; }
+    .xp-header .monogram, .xp .monogram {
+      width: 40px; height: 40px; border-radius: 50%; flex: none;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--line-strong); background: var(--surface);
+      font: 500 15px/1 var(--serif); letter-spacing: 0.06em; color: var(--ink);
+    }
+    .xp-header .brand-name { display: block; font: 500 18px/1.2 var(--serif); color: var(--ink); letter-spacing: 0.01em; white-space: nowrap; }
+    .xp-header .brand-role { display: block; font-size: 11.5px; color: var(--muted); letter-spacing: 0.04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .xp-header .primary-nav ul { display: flex; align-items: center; gap: clamp(16px, 1.8vw, 26px); list-style: none; margin: 0; padding: 0; }
+    .xp-header .primary-nav a {
+      position: relative; display: inline-block; padding: 6px 0; white-space: nowrap;
+      font-size: 14px; font-weight: 500; color: var(--ink-2); text-decoration: none; transition: color .2s ease;
+    }
+    .xp-header .primary-nav a::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+      background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+    }
+    .xp-header .primary-nav a:hover, .xp-header .primary-nav a.is-active { color: var(--ink); }
+    .xp-header .primary-nav a:hover::after, .xp-header .primary-nav a.is-active::after { transform: scaleX(1); }
+
+    .xp-header .header-actions { display: flex; align-items: center; gap: 10px; flex: none; }
+    .xp-header .hbtn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 40px; padding: 0 16px; font: 600 13px/1.2 var(--sans); letter-spacing: 0.01em;
+      border-radius: var(--radius); border: 1px solid transparent; text-decoration: none; cursor: pointer; text-align: center;
+      transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .xp-header .hbtn-secondary { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+    .xp-header .hbtn-secondary:hover { border-color: var(--ink); }
+    .xp-header .hbtn-primary { background: var(--ink); color: var(--bg); }
+    .xp-header .hbtn-primary:hover { background: var(--accent); color: #fff; }
+    html.dark .xp-header .hbtn-primary:hover { color: #0A1018; }
+    .xp-header .icon-btn {
+      width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
+      background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius);
+      color: var(--ink); cursor: pointer; transition: border-color .2s ease;
+    }
+    .xp-header .icon-btn:hover { border-color: var(--ink); }
+    .xp-header .theme-toggle .i-sun { display: none; }
+    html.dark .xp-header .theme-toggle .i-sun { display: inline-block; }
+    html.dark .xp-header .theme-toggle .i-moon { display: none; }
+    .xp-header .menu-toggle { display: none; }
+
+    .xp-header .mobile-nav {
+      display: block; border-top: 1px solid var(--line); background: var(--bg);
+      padding: 12px var(--gutter) 24px; max-height: calc(100vh - 72px); overflow-y: auto;
+      border-bottom: 1px solid var(--line); box-shadow: 0 18px 32px -20px rgba(0, 0, 0, 0.35);
+    }
+    .xp-header .mobile-nav.hidden { display: none; }
+    .xp-header .mobile-nav a.nav-link {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      padding: 14px 0; border-bottom: 1px solid var(--line);
+      font: 500 20px/1.2 var(--serif); color: var(--ink); text-decoration: none;
+    }
+    .xp-header .mobile-nav .mobile-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+    .xp-header .mobile-nav .hbtn { min-height: 48px; padding: 8px 14px; }
+
+    @media (max-width: 1180px) {
+      .xp-header .primary-nav, .xp-header .dossier-btn { display: none; }
+      .xp-header .menu-toggle { display: inline-flex; }
+    }
+    @media (min-width: 1181px) { .xp-header .mobile-nav { display: none !important; } .xp-header .brand-role { display: none; } }
+    @media (max-width: 640px) {
+      .xp-header .brand-role { display: none; }
+      .xp-header .mobile-nav .mobile-actions { grid-template-columns: 1fr; }
+    }
+
+    /* Hero offset and anchor offsets for the 72px fixed header */
+    .xp { --header-h: 72px; }
+    @media (min-width: 640px) { .xp { --header-h: 72px; } }
+    section[id] { scroll-margin-top: 72px; }
+
+    /* ==========================================================
+       Career progression bar — design from optional.html
+       ========================================================== */
+    .career-progress {
+      --cp-early: #CDC7BB; --cp-mid: #5F6B7B; --cp-accent: #b8860b; --cp-ink: #0E1A2B; --cp-muted: #5F6B7B;
+      margin: 0 0 48px; font-family: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    html.dark .career-progress { --cp-early: #2C3A4B; --cp-mid: #8E98A6; --cp-accent: #CDAE72; --cp-ink: #EDEFF3; --cp-muted: #8E98A6; }
+    .career-progress .cp-bar { display: flex; height: 10px; gap: 3px; }
+    .career-progress .cp-bar span { display: block; height: 100%; background: var(--cp-early); }
+    .career-progress .seg-early { flex: 3.9; }
+    .career-progress .seg-otobi { flex: 7.8; background: var(--cp-mid) !important; opacity: .55; }
+    .career-progress .seg-bti { flex: 0.6; background: var(--cp-mid) !important; opacity: .85; }
+    .career-progress .seg-shwapno { flex: 14.6; background: var(--cp-accent) !important; }
+    .career-progress .cp-legend { display: grid; grid-template-columns: 3.9fr 7.8fr 0.6fr 14.6fr; gap: 3px; margin-top: 14px; }
+    .career-progress .cp-legend div { font-size: 13px; color: var(--cp-muted); line-height: 1.4; min-width: 0; }
+    .career-progress .cp-legend b { display: block; color: var(--cp-ink); font-weight: 600; }
+    .career-progress .lg-bti { visibility: hidden; }
+    @media (max-width: 900px) {
+      .career-progress .cp-legend { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .career-progress .lg-bti { display: none; }
+    }
+    @media (max-width: 640px) {
+      .career-progress .cp-legend { grid-template-columns: 1fr 1fr; gap: 12px; }
+    }
+    @media print { .career-progress { display: none; } }
+  </style>
 </head>
 
 
 <body class="bg-slate-50 text-slate-800 dark:bg-obsidian-900 dark:text-slate-200 font-sans antialiased selection:bg-champagne-600 selection:text-obsidian-950 overflow-x-hidden transition-colors duration-300">
 
-  <!-- Executive Institutional Navigation -->
-  <header class="fixed top-0 left-0 right-0 z-50 dark-glass transition-all duration-300 shadow-sm dark:shadow-none" id="main-header">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 sm:h-24 flex items-center justify-between">
-      
-      <!-- Monogram Crest -->
-      <a href="#hero" class="flex items-center space-x-3.5 group">
-        <div class="w-11 h-11 rounded-full border border-champagne-600/60 dark:border-champagne-500/60 flex items-center justify-center bg-white dark:bg-obsidian-850 shadow-md dark:shadow-gold-glow group-hover:border-champagne-400 transition-all duration-300">
-          <span class="font-serif font-bold text-base text-champagne-700 dark:text-champagne-400 tracking-wider">AN</span>
-        </div>
-        <div>
-          <span class="block font-serif text-lg tracking-wide text-slate-900 dark:text-white group-hover:text-champagne-600 dark:group-hover:text-champagne-300 transition-colors font-bold">
-            ABU NASER
-          </span>
-          <span class="block text-[10px] uppercase tracking-[0.24em] text-champagne-700 dark:text-champagne-500 font-semibold">
-            Chief Business Officer &bull; Retail Transformation Leader
-          </span>
-        </div>
+  <!-- Executive Institutional Navigation (optional.html design · main.html names & sections) -->
+  <header class="xp xp-header" id="main-header">
+    <div class="xp-container header-inner">
+      <a class="brand" href="#hero" aria-label="Abu Naser — back to top">
+        <span class="monogram" aria-hidden="true">AN</span>
+        <span>
+          <span class="brand-name">Abu Naser</span>
+          <span class="brand-role">Chief Business Officer &bull; Retail Transformation Leader</span>
+        </span>
       </a>
 
-      <!-- Desktop Links & Action Buttons with Unified Spacing -->
-      <div class="hidden lg:flex items-center space-x-7">
-        <nav class="flex items-center space-x-7 text-xs font-semibold uppercase tracking-[0.18em] text-slate-700 dark:text-slate-300">
-          <a href="#summary" class="hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Executive Summary</a>
-          <a href="#metrics" class="hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Scale &amp; Impact</a>
-          <a href="#proficiencies" class="hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Proficiencies</a>
-          <a href="#career" class="hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Career Track</a>
-          <a href="#credentials" class="hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Credentials</a>
-          <a href="#secretariat" class="hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Secretariat</a>
-        </nav>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#summary">Executive Summary</a></li>
+          <li><a href="#metrics">Scale &amp; Impact</a></li>
+          <li><a href="#proficiencies">Proficiencies</a></li>
+          <li><a href="#career">Career Track</a></li>
+          <li><a href="#credentials">Credentials</a></li>
+          <li><a href="#secretariat">Secretariat</a></li>
+        </ul>
+      </nav>
 
-        <!-- Desktop CTAs & Theme Switcher (Equal distance from Secretariat) -->
-        <div class="flex items-center space-x-3">
-          <button onclick="openDossierModal()" class="px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-slate-800 dark:text-champagne-300 border border-slate-300 dark:border-champagne-500/40 rounded hover:border-champagne-500 hover:bg-champagne-500/10 transition-all shadow-sm">
-            <i class="fa-solid fa-file-pdf mr-1.5 text-champagne-600 dark:text-champagne-400"></i> Dossier
-          </button>
-
-          <!-- Interactive Theme Switcher Button -->
-          <button id="theme-toggle-btn" onclick="toggleTheme()" class="px-3.5 py-2.5 rounded text-xs font-semibold uppercase tracking-wider border border-slate-300 dark:border-champagne-500/40 text-slate-700 dark:text-champagne-300 bg-white/80 dark:bg-obsidian-800 hover:bg-slate-100 dark:hover:bg-champagne-500/10 transition-all flex items-center gap-2 shadow-sm" title="Toggle Theme (White / Black)">
-            <i id="theme-toggle-icon" class="fa-solid fa-moon text-sm text-champagne-600 dark:text-champagne-400"></i>
-            <span id="theme-toggle-label" class="hidden xl:inline text-[11px] font-bold">Theme</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Hamburger Button & Mobile Theme Toggle -->
-      <div class="flex items-center gap-2 lg:hidden">
-        <button onclick="toggleTheme()" class="p-2 text-slate-700 dark:text-champagne-400 text-lg hover:text-champagne-600 transition-colors" aria-label="Toggle Theme">
-          <i id="mobile-theme-icon" class="fa-solid fa-moon"></i>
+      <div class="header-actions">
+        <button type="button" class="hbtn hbtn-secondary dossier-btn" onclick="openDossierModal()">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#i-doc"/></svg>
+          <span>Dossier</span>
         </button>
-        <button id="mobile-menu-btn" class="text-slate-800 dark:text-champagne-400 hover:text-champagne-600 text-2xl focus:outline-none p-2" aria-label="Toggle Navigation">
-          <i class="fa-solid fa-bars-staggered"></i>
+        <button type="button" class="icon-btn theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme (light / dark)" title="Toggle Theme (White / Black)">
+          <svg class="icon i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+        <button type="button" class="icon-btn menu-toggle" id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle Navigation">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-white/95 dark:bg-obsidian-950/95 border-b border-slate-200 dark:border-champagne-500/20 px-6 py-6 space-y-4 shadow-2xl transition-colors">
-      <a href="#summary" class="block text-xs uppercase tracking-widest text-slate-700 dark:text-slate-300 hover:text-champagne-600 dark:hover:text-champagne-400 font-semibold py-1">Executive Summary</a>
-      <a href="#metrics" class="block text-xs uppercase tracking-widest text-slate-700 dark:text-slate-300 hover:text-champagne-600 dark:hover:text-champagne-400 font-semibold py-1">Scale &amp; Impact</a>
-      <a href="#proficiencies" class="block text-xs uppercase tracking-widest text-slate-700 dark:text-slate-300 hover:text-champagne-600 dark:hover:text-champagne-400 font-semibold py-1">Key Proficiencies</a>
-      <a href="#career" class="block text-xs uppercase tracking-widest text-slate-700 dark:text-slate-300 hover:text-champagne-600 dark:hover:text-champagne-400 font-semibold py-1">Career Journey</a>
-      <a href="#credentials" class="block text-xs uppercase tracking-widest text-slate-700 dark:text-slate-300 hover:text-champagne-600 dark:hover:text-champagne-400 font-semibold py-1">Academic &amp; IBA Credentials</a>
-      <a href="#secretariat" class="block text-xs uppercase tracking-widest text-slate-700 dark:text-slate-300 hover:text-champagne-600 dark:hover:text-champagne-400 font-semibold py-1">Secretariat Office</a>
-      <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2.5">
-        <button onclick="toggleTheme()" class="w-full text-center py-2.5 border border-slate-300 dark:border-champagne-500/40 text-slate-800 dark:text-champagne-300 font-semibold uppercase text-xs tracking-widest rounded bg-slate-100 dark:bg-champagne-500/10 flex items-center justify-center gap-2">
-          <i class="fa-solid fa-circle-half-stroke text-champagne-600 dark:text-champagne-400"></i> Toggle White / Black Theme
+    <nav class="mobile-nav hidden" id="mobile-menu" aria-label="Mobile">
+      <a class="nav-link" href="#summary">Executive Summary <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="nav-link" href="#metrics">Scale &amp; Impact <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="nav-link" href="#proficiencies">Key Proficiencies <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="nav-link" href="#career">Career Journey <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="nav-link" href="#credentials">Academic &amp; IBA Credentials <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="nav-link" href="#secretariat">Secretariat Office <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <div class="mobile-actions">
+        <button type="button" class="hbtn hbtn-secondary" onclick="openDossierModal()">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#i-doc"/></svg> <span>Executive CV Bio (PDF Dossier)</span>
         </button>
-        <button onclick="openDossierModal()" class="w-full text-center py-2.5 border border-slate-300 dark:border-champagne-500/40 text-slate-800 dark:text-champagne-300 font-semibold uppercase text-xs tracking-widest rounded bg-slate-50 dark:bg-champagne-500/10">
-          Executive CV Bio (PDF Dossier)
-        </button>
-        <a href="https://wa.me/8801714038556" target="_blank" rel="noreferrer" class="w-full text-center py-2.5 bg-emerald-600 text-white font-semibold uppercase text-xs tracking-widest rounded flex items-center justify-center gap-2">
-          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp: (+88) 01714038556
-        </a>
+        <a class="hbtn hbtn-primary" href="https://wa.me/8801714038556" target="_blank" rel="noopener noreferrer">WhatsApp: (+88) 01714038556</a>
       </div>
-    </div>
+    </nav>
   </header>
 
 
-  <section id="hero" class="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-obsidian-950 dark:via-obsidian-900 dark:to-obsidian-850 border-b border-slate-200 dark:border-champagne-500/15 transition-colors">
-    <div class="absolute inset-0 geometric-mesh pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-        
-        <!-- Left Hero Narrative Column -->
-        <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white dark:bg-obsidian-800 border border-champagne-600/30 dark:border-champagne-500/30 shadow-sm dark:shadow-gold-glow">
-            <span class="w-2.5 h-2.5 rounded-full bg-champagne-600 dark:bg-champagne-400 animate-pulse"></span>
-            <span class="text-[11px] font-bold uppercase tracking-[0.22em] text-champagne-800 dark:text-champagne-300">
-              C-Suite Retail &amp; Enterprise Transformation Executive
-            </span>
-          </div>
-
-          <h1 class="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-[2.65rem] font-medium tracking-tight text-slate-900 dark:text-white leading-snug">
-            <span class="inline-block whitespace-nowrap">Transforming Retail at Scale</span> &mdash; <span class="inline-block whitespace-nowrap gold-gradient-text italic font-serif">Ranked No.&nbsp;1</span> Nationwide. Architecting Vision 2030.
-          </h1>
-
-          <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal text-justify">
-            Accomplished Business &amp; Retail Executive with <strong class="text-slate-900 dark:text-white font-semibold">26+ years of leadership</strong> in business strategy, commercial transformation, sales, sourcing, and nationwide expansion. Proven C-suite leader who scaled monthly national sales by <strong class="text-champagne-700 dark:text-champagne-300 font-semibold">1,140%</strong> (from BDT 25 Crore to BDT 310 Crore) and onboarded <strong class="text-slate-900 dark:text-white font-semibold">1,010 retail stores</strong> for Bangladesh's modern trade powerhouse.
-          </p>
-
-          <!-- Core Value Metrics Strip with Equal Spacing & Clean Dividers -->
-          <div class="grid grid-cols-3 divide-x divide-slate-200 dark:divide-champagne-500/20 py-5 border-y border-slate-200 dark:border-champagne-500/20 bg-white/80 dark:bg-obsidian-800/80 rounded-lg shadow-sm dark:shadow-dark-luxury backdrop-blur">
-            <div class="px-3 sm:px-5 text-center">
-              <div class="text-lg sm:text-2xl lg:text-3xl font-serif font-bold text-slate-900 dark:text-white whitespace-nowrap">BDT 3,500 Cr</div>
-              <div class="text-[9px] sm:text-[10px] uppercase tracking-wider text-champagne-700 dark:text-champagne-400 font-semibold mt-1">Vision 2030 Target</div>
+  <!-- ======= Hero + Executive Summary (from optional.html; styles scoped under .xp) ======= -->
+  <div class="xp">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></g></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 10c0 5.5-7.5 11.5-7.5 11.5S4.5 15.5 4.5 10a7.5 7.5 0 0 1 15 0Z"/><circle cx="12" cy="10" r="2.6"/></g></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="1.5"/><path d="m3 6.5 9 6.5 9-6.5"/></g></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5L14 3Z"/><path d="M14 3v4.5h4.5M9 13h6M9 16.5h6"/></g></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></g></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></g></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></g></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></g></symbol>
+    </defs>
+  </svg>
+    <!-- ======================= HERO ======================= -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="xp-container">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Chief Business Officer · ACI Logistics Limited (Shwapno)</p>
+            <h1 id="hero-title">Abu Naser</h1>
+            <p class="hero-statement">Twenty-six years transforming retail at national scale — taking Shwapno from <em>No.&nbsp;3 to No.&nbsp;1</em>.</p>
+            <p class="hero-lede">
+              Business and retail executive with more than 26 years of leadership across business strategy, commercial transformation, sales, sourcing and nationwide expansion. As Director Operations, he grew Shwapno’s monthly national sales from <strong>BDT&nbsp;25&nbsp;Crore to BDT&nbsp;310&nbsp;Crore</strong> and onboarded <strong>1,010 retail stores</strong>. As Chief Business Officer, he now leads delivery of Vision&nbsp;2030 — a <strong>BDT&nbsp;3,500&nbsp;Crore</strong> company portfolio.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#career">View career record <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <a class="btn btn-secondary" href="#secretariat">Contact the office</a>
             </div>
-            <div class="px-3 sm:px-5 text-center">
-              <div class="text-lg sm:text-2xl lg:text-3xl font-serif font-bold text-slate-900 dark:text-white whitespace-nowrap">1,010+</div>
-              <div class="text-[9px] sm:text-[10px] uppercase tracking-wider text-champagne-700 dark:text-champagne-400 font-semibold mt-1">Stores Onboarded</div>
-            </div>
-            <div class="px-3 sm:px-5 text-center">
-              <div class="text-lg sm:text-2xl lg:text-3xl font-serif font-bold text-slate-900 dark:text-white whitespace-nowrap">26+ Years</div>
-              <div class="text-[9px] sm:text-[10px] uppercase tracking-wider text-champagne-700 dark:text-champagne-400 font-semibold mt-1">Proven Enterprise Arc</div>
+            <div class="hero-meta">
+              <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-pin"/></svg> Tejgaon, Dhaka</span>
+              <a href="https://www.linkedin.com/in/abu-naser-131b6939/" target="_blank" rel="noopener noreferrer"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn profile<span class="visually-hidden"> (opens in a new tab)</span></a>
+              <a href="mailto:ansohel16@gmail.com"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"/></svg> ansohel16@gmail.com</a>
             </div>
           </div>
 
-          <!-- CTAs & Direct Contact (Without WhatsApp Button) -->
-          <div class="flex flex-wrap items-center gap-3.5 pt-2">
-            <a href="#career" class="px-7 py-3.5 bg-gradient-to-r from-champagne-600 to-champagne-500 hover:from-champagne-500 hover:to-champagne-400 text-obsidian-950 font-bold uppercase tracking-wider text-xs rounded transition-all shadow-md dark:shadow-gold-glow flex items-center gap-2">
-              <i class="fa-solid fa-timeline"></i> Explore Career Journey
-            </a>
-            <button onclick="openDossierModal()" class="px-6 py-3.5 bg-white dark:bg-obsidian-800 border border-slate-300 dark:border-champagne-500/40 hover:border-champagne-500 text-slate-800 dark:text-slate-200 hover:text-champagne-700 dark:hover:text-champagne-300 uppercase tracking-wider text-xs font-semibold rounded transition-all shadow-sm flex items-center gap-2">
-              <i class="fa-solid fa-file-arrow-down text-champagne-600 dark:text-champagne-400"></i> Executive Bio Dossier
-            </button>
-          </div>
+          <figure class="portrait reveal" id="portrait">
+            <span class="portrait-rule" aria-hidden="true"></span>
+            <div class="portrait-frame">
+              <!-- To use a local copy instead, save the photo next to this file and change src to e.g. "abu-naser.jpg". -->
+              <img src="https://i.imgur.com/f8V8xsF.jpeg" alt="Portrait of Abu Naser, Chief Business Officer of ACI Logistics Limited (Shwapno)" width="800" height="1000" fetchpriority="high" decoding="async" id="portrait-img">
+              <div class="portrait-fallback" aria-hidden="true">AN</div>
+            </div>
+            <figcaption>
+              <span><strong>Abu Naser</strong>Chief Business Officer</span>
+              <span>Former Director Operations</span>
+            </figcaption>
+          </figure>
         </div>
 
-        <!-- Right Hero Portrait & Signet Card -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-md lg:max-w-none">
-            <!-- Glowing Gold Accent Backing -->
-            <div class="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-champagne-600/30 via-champagne-400/10 to-transparent blur-md"></div>
-
-            <div class="relative rounded-2xl overflow-hidden border border-slate-300 dark:border-champagne-500/30 bg-white dark:bg-obsidian-850 shadow-light-luxury dark:shadow-dark-luxury flex flex-col">
-              
-              <!-- Clean Portrait Frame: Unobstructed view of Sir's full photo -->
-              <div class="relative bg-slate-100 dark:bg-obsidian-950 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="https://i.imgur.com/f8V8xsF.jpeg"
-                  alt="Abu Naser - Chief Business Officer" 
-                  class="w-full h-auto max-h-[560px] object-contain sm:object-cover object-top transition-all duration-700 hover:scale-[1.01]"
-                  onerror="this.src='https://placehold.co/800x1000/090d16/d4af37?text=Abu+Naser+Executive'"
-                />
-                
-                <!-- Status Badge placed at the top corner so it never obscures Sir -->
-                <div class="absolute top-4 left-4">
-                  <span class="text-[10px] px-2.5 py-1 rounded-full bg-slate-900/85 dark:bg-obsidian-950/90 backdrop-blur-md border border-emerald-500/50 text-emerald-300 font-semibold flex items-center gap-1.5 shadow-md">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Active C-Suite Leader
-                  </span>
-                </div>
-              </div>
-
-              <!-- Dedicated Executive Credential Card Docked Beneath Photo (Zero Overlap) -->
-              <div class="p-5 bg-white dark:bg-obsidian-900 border-t border-slate-200 dark:border-champagne-500/20">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] uppercase tracking-widest text-champagne-700 dark:text-champagne-400 font-bold">C-Suite Retail Executive</span>
-                  <span class="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Vision 2030 Architect</span>
-                </div>
-                
-                <h3 class="text-2xl font-serif font-bold text-slate-900 dark:text-white tracking-wide mt-1">Abu Naser</h3>
-                <p class="text-xs text-slate-700 dark:text-slate-300 font-semibold mt-0.5">Chief Business Officer (CBO) &bull; Former Director Operations</p>
-                <p class="text-[11px] text-champagne-700 dark:text-champagne-400 font-bold mt-0.5">ACI Logistics Limited (Shwapno)</p>
-                
-                <div class="mt-3 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-                  <span class="flex items-center gap-1.5 text-[11px] text-slate-600 dark:text-slate-300 font-medium">
-                    <i class="fa-solid fa-location-dot text-champagne-600 dark:text-champagne-400"></i> Gulshan 1, Dhaka
-                  </span>
-                  <a href="https://linkedin.com/in/abu-naser-131b6939/" target="_blank" rel="noreferrer" class="text-champagne-700 dark:text-champagne-300 hover:text-slate-900 dark:hover:text-white font-semibold text-[11px] flex items-center gap-1.5 transition-colors">
-                    <i class="fa-brands fa-linkedin text-sm"></i> Official LinkedIn
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Floating Seal -->
-            <div class="absolute -top-3 -right-3 w-24 h-24 rounded-full border border-champagne-600/50 dark:border-champagne-500/50 bg-white dark:bg-obsidian-900 shadow-md dark:shadow-gold-glow flex flex-col items-center justify-center p-2 text-center hidden sm:flex">
-              <i class="fa-solid fa-trophy text-champagne-600 dark:text-champagne-400 text-lg mb-0.5"></i>
-              <span class="text-[9px] uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold">Brand Forum</span>
-              <span class="text-[8px] text-champagne-700 dark:text-champagne-300 font-bold">Ranked No. 1</span>
-            </div>
+        <dl class="key-figures reveal" aria-label="Key figures">
+          <div class="key-figure">
+            <dt class="visually-hidden">Monthly national sales</dt>
+            <dd><span class="value num">+1,140%</span><span class="label">Monthly national sales growth, BDT 25 Cr to BDT 310 Cr</span></dd>
           </div>
-        </div>
-
+          <div class="key-figure">
+            <dt class="visually-hidden">Stores onboarded</dt>
+            <dd><span class="value num">1,010</span><span class="label">Retail stores onboarded nationwide</span></dd>
+          </div>
+          <div class="key-figure">
+            <dt class="visually-hidden">Market position</dt>
+            <dd><span class="value">No. 1</span><span class="label">Ranking, up from No. 3 — Bangladesh Brand Forum</span></dd>
+          </div>
+          <div class="key-figure">
+            <dt class="visually-hidden">Vision 2030</dt>
+            <dd><span class="value num">BDT 3,500 Cr</span><span class="label">Vision 2030 company portfolio target</span></dd>
+          </div>
+        </dl>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- ======================= PROFILE ======================= -->
+    <section class="section" id="summary" aria-labelledby="profile-title">
+      <div class="xp-container">
+        <div class="profile-grid">
+          <div class="reveal">
+            <p class="eyebrow">Executive Profile</p>
+            <h2 id="profile-title" class="visually-hidden">Executive profile</h2>
+            <blockquote class="mandate" style="margin-top:28px">
+              <p>Spearheading strategic growth, commercial excellence, operational transformation, profitability and sustainable enterprise value creation — as Chief Business Officer, CEO or Managing Director.</p>
+              <footer>Leadership focus</footer>
+            </blockquote>
 
-  <section id="summary" class="py-20 lg:py-24 bg-white dark:bg-obsidian-900 border-b border-slate-200 dark:border-champagne-500/15 transition-colors">
-    <div class="max-w-6xl mx-auto px-6 lg:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-        
-        <div class="lg:col-span-5 border-l-4 border-champagne-600 dark:border-champagne-500 pl-6 space-y-3">
-          <span class="text-xs uppercase tracking-[0.24em] text-champagne-700 dark:text-champagne-400 font-bold">Executive Objective &amp; Mandate</span>
-          <h2 class="font-serif text-lg sm:text-xl lg:text-2xl font-semibold text-slate-900 dark:text-white leading-relaxed text-justify">
-            "To work as a Chief Business Officer / CEO / MD, spearheading strategic growth, commercial excellence, operational transformation, profitability, and sustainable enterprise value creation."
-          </h2>
-          <p class="text-xs text-champagne-700 dark:text-champagne-500 uppercase tracking-widest pt-2 font-mono">Leadership Thesis &bull; Abu Naser</p>
+            <dl class="glance">
+              <div><dt>Current role</dt><dd>Chief Business Officer, ACI Logistics Limited (Shwapno), since August 2026</dd></div>
+              <div><dt>At Shwapno</dt><dd>Since April 2012 — Chief of Operations, Director Operations, Chief Business Officer</dd></div>
+              <div><dt>Regional</dt><dd>OTOBI Ltd — operations across China, India, Thailand and Malaysia</dd></div>
+              <div><dt>Education</dt><dd>IBA, University of Dhaka (ACBA, CBSI, LCMC) · M.Com. in Management</dd></div>
+              <div><dt>Languages</dt><dd>Bengali and English (fluent)</dd></div>
+            </dl>
+          </div>
+
+          <div class="profile-body reveal">
+            <p>
+              Over a career spanning more than 26 years, Abu Naser has become one of the principal architects of modern retail in Bangladesh. As the operational and commercial lead behind <strong>ACI Logistics Limited (Shwapno)</strong>, he guided the business from market challenger to market leader, raising the brand from <strong>No.&nbsp;3 to No.&nbsp;1</strong> as recognized by Bangladesh Brand Forum.
+            </p>
+            <p>
+              His leadership combines market intelligence, real estate foresight and disciplined P&amp;L governance. Under his directorship, monthly national sales grew by <strong>1,140%</strong> — from BDT&nbsp;25&nbsp;Crore to BDT&nbsp;310&nbsp;Crore — while the network expanded at a sustained pace of <strong>30 new stores a month for four consecutive months</strong>, and the final year delivered <strong>35% sales growth and 30% footfall growth</strong>.
+            </p>
+            <p>
+              As <strong>Chief Business Officer</strong>, he now leads Shwapno’s Big Box Retail Strategy across Volume and Warehouse Retail, the rollout of the Network-Led Model and Managed Retail Points, and delivery of <strong>Vision&nbsp;2030</strong> — the roadmap to a <strong>BDT&nbsp;3,500&nbsp;Crore</strong> company portfolio that he developed as Director Operations.
+            </p>
+            <p>
+              Earlier, at OTOBI Ltd, he directed regional operations across China, India, Thailand and Malaysia, growing annual company sales from BDT&nbsp;95&nbsp;Crore to BDT&nbsp;554&nbsp;Crore. His foundation was built in FMCG field sales and modern trade, where he was named Best Territory Officer of the Year nationwide.
+            </p>
+          </div>
         </div>
-
-        <div class="lg:col-span-7 space-y-4 text-slate-600 dark:text-slate-300 text-base leading-relaxed text-justify">
-          <p class="text-justify leading-relaxed">
-            With an executive career spanning over <strong class="text-slate-900 dark:text-white font-semibold">26+ years</strong>, Abu Naser is a prominent business and retail strategist celebrated for modernizing Bangladesh’s retail landscape. As the driving operational and commercial architect behind <strong class="text-slate-900 dark:text-white font-semibold">ACI Logistics Limited (Shwapno)</strong>, he guided the enterprise from market challenger to undisputed market leader, elevating the brand from <strong class="text-champagne-700 dark:text-champagne-300 font-semibold">No. 3 to No. 1</strong> as recognized by Bangladesh Brand Forum.
-          </p>
-          <p class="text-justify leading-relaxed">
-            His leadership combines strategic market intelligence, real estate foresight, and rigorous P&amp;L governance: expanding nationwide monthly sales by <strong class="text-slate-900 dark:text-white font-semibold">1,140%</strong> from BDT 25 Crore to BDT 310 Crore, maintaining a breakneck pace of opening <strong class="text-champagne-700 dark:text-champagne-300 font-semibold">30 stores per month</strong> for four consecutive months, and achieving 35% sales and 30% footfall growth.
-          </p>
-          <p class="text-justify leading-relaxed">
-            Currently serving as <strong class="text-slate-900 dark:text-white font-semibold">Chief Business Officer (CBO)</strong>, he is spearheading Shwapno’s Big Box Retail Strategy (Volume &amp; Warehouse Retail), rolling out the Network-Led Model, and delivering on <strong class="text-slate-900 dark:text-white font-semibold">Vision 2030</strong> to build a <strong class="text-champagne-700 dark:text-champagne-300 font-semibold">BDT 3,500 Crore company portfolio</strong>.
-          </p>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
 
   <section id="metrics" class="py-24 bg-slate-100/70 dark:bg-obsidian-850 relative transition-colors">
@@ -690,6 +899,19 @@
         <p class="text-slate-600 dark:text-slate-400 text-sm">
           Filter through executive milestones spanning Mega Modern Trade at Shwapno, Regional Southeast Asian Expansion at OTOBI, and foundational commercial leadership.
         </p>
+      </div>
+
+      <!-- Career Progression Bar (optional.html design) -->
+      <div class="career-progress" aria-hidden="true">
+        <div class="cp-bar">
+          <span class="seg-early" title="Early career · 2000–2004"></span><span class="seg-otobi" title="OTOBI Ltd · 2004–2011"></span><span class="seg-bti" title="BTI Retail Ltd · 2011–2012"></span><span class="seg-shwapno" title="ACI Logistics (Shwapno) · 2012–present"></span>
+        </div>
+        <div class="cp-legend">
+          <div><b>Early career</b>2000–2004</div>
+          <div><b>OTOBI Ltd</b>2004–2011</div>
+          <div class="lg-bti"><b>BTI</b>2011–12</div>
+          <div><b>ACI Logistics (Shwapno)</b>2012–present</div>
+        </div>
       </div>
 
       <!-- Filter Buttons -->
@@ -1081,7 +1303,7 @@
             <div class="w-9 h-9 rounded bg-slate-100 dark:bg-obsidian-850 border border-slate-300 dark:border-champagne-500/30 flex items-center justify-center text-champagne-700 dark:text-champagne-400">
               <i class="fa-solid fa-graduation-cap"></i>
             </div>
-            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white">IBA, University of Dhaka Credentials</h3>
+            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white">IBA, University of Dhaka</h3>
           </div>
 
           <div class="space-y-4">
@@ -1242,8 +1464,8 @@
               </div>
               <div>
                 <span class="text-[10px] uppercase tracking-widest text-champagne-700 dark:text-champagne-400 font-bold">Executive Residence &amp; Office</span>
-                <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Flat 2B, House 08, Road 09</h4>
-                <p class="text-xs text-slate-500 dark:text-slate-400">Gulshan 1, Dhaka, Bangladesh</p>
+                <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Trade Intercontinental, 213/A Bir Uttam <br> Mir Shawkat Sarak</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Dhaka 1208,Bangladesh</p>
               </div>
             </div>
 
@@ -1592,6 +1814,81 @@
         header.classList.remove('shadow-md', 'dark:shadow-dark-luxury');
       }
     });
+  </script>
+  <!-- Hero & Executive Summary behaviour (from optional.html) -->
+  <script>
+    (function () {
+      'use strict';
+      // Reveal on scroll
+      var reveals = document.querySelectorAll('.xp .reveal');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!('IntersectionObserver' in window) || reduce) {
+        reveals.forEach(function (el) { el.classList.add('is-in'); });
+      } else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) { entry.target.classList.add('is-in'); io.unobserve(entry.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        reveals.forEach(function (el) { io.observe(el); });
+      }
+      window.addEventListener('beforeprint', function () {
+        reveals.forEach(function (el) { el.classList.add('is-in'); });
+      });
+
+      // Portrait fallback (monogram) if the photo cannot load
+      var portrait = document.getElementById('portrait');
+      var img = document.getElementById('portrait-img');
+      if (portrait && img) {
+        var showFallback = function () { portrait.classList.add('no-image'); };
+        img.addEventListener('error', showFallback);
+        if (img.complete && img.naturalWidth === 0) showFallback();
+      }
+    })();
+  </script>
+  <!-- Header behaviour (works alongside main.html's existing script) -->
+  <script>
+    (function () {
+      'use strict';
+      var header = document.getElementById('main-header');
+      var btn = document.getElementById('mobile-menu-btn');
+      var menu = document.getElementById('mobile-menu');
+
+      // Keep the menu button's state and icon in sync with main.html's toggle
+      function sync() {
+        var open = !menu.classList.contains('hidden');
+        btn.setAttribute('aria-expanded', String(open));
+        btn.querySelector('use').setAttribute('href', open ? '#i-close' : '#i-menu');
+      }
+      new MutationObserver(sync).observe(menu, { attributes: true, attributeFilter: ['class'] });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !menu.classList.contains('hidden')) { menu.classList.add('hidden'); btn.focus(); }
+      });
+      window.addEventListener('resize', function () { if (window.innerWidth > 1180) menu.classList.add('hidden'); });
+
+      // Hairline under the header once the page scrolls
+      function onScroll() { header.classList.toggle('is-scrolled', (window.scrollY || window.pageYOffset) > 8); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Underline the menu item for the section in view
+      var links = header.querySelectorAll('.primary-nav a');
+      if ('IntersectionObserver' in window) {
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            links.forEach(function (l) {
+              var on = l.getAttribute('href') === '#' + entry.target.id;
+              l.classList.toggle('is-active', on);
+              if (on) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
+            });
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        ['hero', 'summary', 'metrics', 'proficiencies', 'career', 'credentials', 'secretariat'].forEach(function (id) {
+          var el = document.getElementById(id); if (el) spy.observe(el);
+        });
+      }
+    })();
   </script>
 </body>
 </html>
