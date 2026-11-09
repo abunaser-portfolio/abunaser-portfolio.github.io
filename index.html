@@ -253,7 +253,7 @@
     /* Executive profile */
     .xp .profile-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 7vw, 96px); }
     .xp .mandate { border-left: 2px solid var(--accent); padding: 4px 0 4px 28px; }
-    .xp .mandate p { font: 400 clamp(22px, 2.3vw, 28px)/1.35 var(--serif); color: var(--ink); }
+    .xp .mandate p { font: 400 clamp(21px, 2vw, 25px)/1.4 var(--serif); color: var(--ink); }
     .xp .mandate footer { margin-top: 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; }
     .xp .glance { margin-top: 48px; border-top: 1px solid var(--line); }
     .xp .glance div { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
@@ -424,6 +424,23 @@
       .career-progress .cp-legend { grid-template-columns: 1fr 1fr; gap: 12px; }
     }
     @media print { .career-progress { display: none; } }
+
+    /* ==========================================================
+       Justified body text — every running paragraph and multi-line
+       bullet. Headlines, centred section intros, label/value rows,
+       sub-titles and meta lines keep their alignment.
+       Hyphenation keeps word spacing even in narrow cards.
+       ========================================================== */
+    .jt,
+    .jt-list li,
+    .xp .hero-lede,
+    .xp .mandate p,
+    .xp .profile-body p {
+      text-align: justify;
+      text-justify: inter-word;
+      -webkit-hyphens: manual;
+      hyphens: manual;
+    }
   </style>
 </head>
 
@@ -509,7 +526,7 @@
             <h1 id="hero-title">Abu Naser</h1>
             <p class="hero-statement">Twenty-six years transforming retail at national scale — taking Shwapno from <em>No.&nbsp;3 to No.&nbsp;1</em>.</p>
             <p class="hero-lede">
-              Business and retail executive with more than 26 years of leadership across business strategy, commercial transformation, sales, sourcing and nationwide expansion. As Director Operations, he grew Shwapno’s monthly national sales from <strong>BDT&nbsp;25&nbsp;Crore to BDT&nbsp;310&nbsp;Crore</strong> and onboarded <strong>1,010 retail stores</strong>. As Chief Business Officer, he now leads delivery of Vision&nbsp;2030 — a <strong>BDT&nbsp;3,500&nbsp;Crore</strong> company portfolio.
+              Busi&shy;ness and retail exec&shy;u&shy;tive with more than 26 years of lead&shy;er&shy;ship across busi&shy;ness strat&shy;egy, com&shy;mer&shy;cial trans&shy;for&shy;ma&shy;tion, sales, sourc&shy;ing and nation&shy;wide expan&shy;sion. As Direc&shy;tor Oper&shy;a&shy;tions, he grew Shwapno’s monthly national sales from <strong>BDT&nbsp;25 Crore to BDT&nbsp;310 Crore</strong> and onboarded <strong>1,010 retail stores</strong>. As Chief Busi&shy;ness Offi&shy;cer, he now leads deliv&shy;ery of Vision 2030 — a <strong>BDT&nbsp;3,500 Crore</strong> com&shy;pany port&shy;fo&shy;lio.
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#career">View career record <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -565,7 +582,7 @@
             <p class="eyebrow">Executive Profile</p>
             <h2 id="profile-title" class="visually-hidden">Executive profile</h2>
             <blockquote class="mandate" style="margin-top:28px">
-              <p>Spearheading strategic growth, commercial excellence, operational transformation, profitability and sustainable enterprise value creation — as Chief Business Officer, CEO or Managing Director.</p>
+              <p>Spear&shy;head&shy;ing strate&shy;gic growth, com&shy;mer&shy;cial excel&shy;lence, oper&shy;a&shy;tional trans&shy;for&shy;ma&shy;tion, prof&shy;itabil&shy;ity and sus&shy;tain&shy;able enter&shy;prise value cre&shy;ation — as Chief Busi&shy;ness Offi&shy;cer, CEO or Man&shy;ag&shy;ing Direc&shy;tor.</p>
               <footer>Leadership focus</footer>
             </blockquote>
 
@@ -580,16 +597,16 @@
 
           <div class="profile-body reveal">
             <p>
-              Over a career spanning more than 26 years, Abu Naser has become one of the principal architects of modern retail in Bangladesh. As the operational and commercial lead behind <strong>ACI Logistics Limited (Shwapno)</strong>, he guided the business from market challenger to market leader, raising the brand from <strong>No.&nbsp;3 to No.&nbsp;1</strong> as recognized by Bangladesh Brand Forum.
+              Over a career span&shy;ning more than 26 years, Abu Naser has become one of the prin&shy;ci&shy;pal archi&shy;tects of modern retail in Bangla&shy;desh. As the oper&shy;a&shy;tional and com&shy;mer&shy;cial lead behind <strong>ACI Logis&shy;tics Lim&shy;ited (Shwapno)</strong>, he guided the busi&shy;ness from market chal&shy;lenger to market leader, rais&shy;ing the brand from <strong>No.&nbsp;3 to No.&nbsp;1</strong> as rec&shy;og&shy;nized by Bangla&shy;desh Brand Forum.
             </p>
             <p>
-              His leadership combines market intelligence, real estate foresight and disciplined P&amp;L governance. Under his directorship, monthly national sales grew by <strong>1,140%</strong> — from BDT&nbsp;25&nbsp;Crore to BDT&nbsp;310&nbsp;Crore — while the network expanded at a sustained pace of <strong>30 new stores a month for four consecutive months</strong>, and the final year delivered <strong>35% sales growth and 30% footfall growth</strong>.
+              His lead&shy;er&shy;ship com&shy;bines market intel&shy;li&shy;gence, real estate fore&shy;sight and dis&shy;ci&shy;plined P&amp;L gov&shy;er&shy;nance. Under his direc&shy;tor&shy;ship, monthly national sales grew by <strong>1,140%</strong> — from BDT&nbsp;25 Crore to BDT&nbsp;310 Crore — while the net&shy;work expanded at a sus&shy;tained pace of <strong>30 new stores a month for four con&shy;sec&shy;u&shy;tive months</strong>, and the final year deliv&shy;ered <strong>35% sales growth and 30% foot&shy;fall growth</strong>.
             </p>
             <p>
-              As <strong>Chief Business Officer</strong>, he now leads Shwapno’s Big Box Retail Strategy across Volume and Warehouse Retail, the rollout of the Network-Led Model and Managed Retail Points, and delivery of <strong>Vision&nbsp;2030</strong> — the roadmap to a <strong>BDT&nbsp;3,500&nbsp;Crore</strong> company portfolio that he developed as Director Operations.
+              As <strong>Chief Busi&shy;ness Offi&shy;cer</strong>, he now leads Shwapno’s Big Box Retail Strat&shy;egy across Volume and Ware&shy;house Retail, the roll&shy;out of the Net&shy;work-Led Model and Man&shy;aged Retail Points, and deliv&shy;ery of <strong>Vision&nbsp;2030</strong> — the roadmap to a <strong>BDT&nbsp;3,500 Crore</strong> com&shy;pany port&shy;fo&shy;lio that he devel&shy;oped as Direc&shy;tor Oper&shy;a&shy;tions.
             </p>
             <p>
-              Earlier, at OTOBI Ltd, he directed regional operations across China, India, Thailand and Malaysia, growing annual company sales from BDT&nbsp;95&nbsp;Crore to BDT&nbsp;554&nbsp;Crore. His foundation was built in FMCG field sales and modern trade, where he was named Best Territory Officer of the Year nationwide.
+              Ear&shy;lier, at OTOBI Ltd, he directed regional oper&shy;a&shy;tions across China, India, Thai&shy;land and Malaysia, grow&shy;ing annual com&shy;pany sales from BDT&nbsp;95 Crore to BDT&nbsp;554 Crore. His foun&shy;da&shy;tion was built in FMCG field sales and modern trade, where he was named Best Ter&shy;ri&shy;tory Offi&shy;cer of the Year nation&shy;wide.
             </p>
           </div>
         </div>
@@ -625,8 +642,8 @@
             <span class="text-4xl font-serif font-bold text-slate-900 dark:text-white tracking-tight counter" data-target="3500">0</span>
             <span class="text-2xl font-serif text-champagne-700 dark:text-champagne-400 font-bold">Cr</span>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-            Formulated and driving Vision 2030, targeting a BDT 3,500 Crore company portfolio across volume, warehouse, and neighborhood retail networks.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed jt">
+            For&shy;mu&shy;lated and driv&shy;ing Vision 2030, tar&shy;get&shy;ing a BDT 3,500 Crore com&shy;pany port&shy;fo&shy;lio across volume, ware&shy;house, and neigh&shy;bor&shy;hood retail net&shy;works.
           </p>
           <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-champagne-700 dark:text-champagne-300 flex items-center gap-1 font-semibold">
             <i class="fa-solid fa-compass text-champagne-600 dark:text-champagne-400"></i> Vision 2030 Enterprise Roadmap
@@ -644,8 +661,8 @@
             <span class="text-3xl font-serif text-champagne-700 dark:text-champagne-400 font-bold">+</span>
             <span class="text-lg font-serif text-slate-700 dark:text-slate-300 ml-1">Stores</span>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-            Onboarded 1,010 retail outlets nationwide, cementing Shwapno’s presence as Bangladesh’s undisputed retail leader with an accelerated franchise model.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed jt">
+            Onboarded 1,010 retail out&shy;lets nation&shy;wide, cement&shy;ing Shwapno’s pres&shy;ence as Bangla&shy;desh’s undis&shy;puted retail leader with an accel&shy;er&shy;ated fran&shy;chise model.
           </p>
           <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-600 dark:text-slate-300 flex items-center gap-1 font-semibold">
             <i class="fa-solid fa-gauge-high text-champagne-600 dark:text-champagne-400"></i> Opened 30 Stores/Month for 4 Months
@@ -663,8 +680,8 @@
             <span class="text-3xl font-serif text-champagne-700 dark:text-champagne-400 font-bold">%</span>
             <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 ml-2 font-mono">25 Cr &rarr; 310 Cr</span>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-            Scaled national monthly sales from BDT 25 Crore to BDT 310 Crore during Director Operations tenure, with 35% sales and 30% footfall growth in the last year.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed jt">
+            Scaled national monthly sales from BDT 25 Crore to BDT 310 Crore during Direc&shy;tor Oper&shy;a&shy;tions tenure, with 35% sales and 30% foot&shy;fall growth in the last year.
           </p>
           <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-emerald-600 dark:text-emerald-400 flex items-center gap-1 font-semibold">
             <i class="fa-solid fa-check-double"></i> 11.4X Topline Expansion
@@ -682,8 +699,8 @@
             <span class="text-2xl font-serif text-champagne-700 dark:text-champagne-400 font-bold mx-1">&rarr;</span>
             <span class="text-4xl font-serif font-bold text-slate-900 dark:text-white tracking-tight">No. 1</span>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-            Elevated Shwapno’s market ranking from No. 3 to No. 1, officially recognized by Brand Forum Bangladesh for sustained brand preference.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed jt">
+            Ele&shy;vated Shwapno’s market rank&shy;ing from No. 3 to No. 1, offi&shy;cially rec&shy;og&shy;nized by Brand Forum Bangla&shy;desh for sus&shy;tained brand pref&shy;er&shy;ence.
           </p>
           <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-champagne-700 dark:text-champagne-300 flex items-center gap-1 font-semibold">
             <i class="fa-solid fa-award text-champagne-600 dark:text-champagne-400"></i> Bangladesh Brand Forum Distinction
@@ -700,8 +717,8 @@
             <span class="text-4xl font-serif font-bold text-slate-900 dark:text-white tracking-tight counter" data-target="16667">0</span>
             <span class="text-3xl font-serif text-champagne-700 dark:text-champagne-400 font-bold">%</span>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-            Launched Non-Food Department (NFD) &amp; Lifestyle at Shwapno, scaling category revenue from BDT 30,000 to BDT 5 Crore per month.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed jt">
+            Launched Non-Food Depart&shy;ment (NFD) &amp; Life&shy;style at Shwapno, scal&shy;ing cat&shy;e&shy;gory rev&shy;enue from BDT 30,000 to BDT 5 Crore per month.
           </p>
           <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-emerald-600 dark:text-emerald-400 flex items-center gap-1 font-semibold">
             <i class="fa-solid fa-box-open"></i> Global Sourcing (China, India, Thailand)
@@ -719,8 +736,8 @@
             <span class="text-4xl font-serif font-bold text-slate-900 dark:text-white tracking-tight counter" data-target="554">0</span>
             <span class="text-2xl font-serif text-champagne-700 dark:text-champagne-400 font-bold">Cr</span>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-            Boosted OTOBI annual sales from BDT 95 Crore to BDT 554 Crore. Directed regional operations across China, India, Thailand, and Malaysia with 17 India franchises.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed jt">
+            Boosted OTOBI annual sales from BDT 95 Crore to BDT 554 Crore. Directed regional oper&shy;a&shy;tions across China, India, Thai&shy;land, and Malaysia with 17 India fran&shy;chises.
           </p>
           <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-600 dark:text-slate-300 flex items-center gap-1 font-semibold">
             <i class="fa-solid fa-building-flag text-champagne-600 dark:text-champagne-400"></i> Increased India Sales 5X (1 Cr to 5 Cr)
@@ -743,8 +760,8 @@
             12 Core Executive Proficiencies
           </h2>
         </div>
-        <p class="text-slate-600 dark:text-slate-400 text-sm max-w-md">
-          A proven portfolio of commercial transformation, retail real estate foresight, unit economics governance, and nationwide supply chain management.
+        <p class="text-slate-600 dark:text-slate-400 text-sm max-w-md jt">
+          A proven port&shy;fo&shy;lio of com&shy;mer&shy;cial trans&shy;for&shy;ma&shy;tion, retail real estate fore&shy;sight, unit eco&shy;nom&shy;ics gov&shy;er&shy;nance, and nation&shy;wide supply chain man&shy;age&shy;ment.
         </p>
       </div>
 
@@ -756,8 +773,8 @@
             <i class="fa-solid fa-chess-queen"></i>
           </div>
           <h3 class="font-serif text-base font-bold text-slate-900 dark:text-white">Business Strategy, Growth &amp; Value Creation</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-            Formulating multi-year corporate roadmaps (Vision 2030), capital efficiency guidelines, and top-to-bottom commercial transformations.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed jt">
+            For&shy;mu&shy;lat&shy;ing multi-year cor&shy;po&shy;rate road&shy;maps (Vision 2030), cap&shy;i&shy;tal effi&shy;ciency guide&shy;lines, and top-to-bottom com&shy;mer&shy;cial trans&shy;for&shy;ma&shy;tions.
           </p>
         </div>
 
@@ -767,8 +784,8 @@
             <i class="fa-solid fa-file-invoice-dollar"></i>
           </div>
           <h3 class="font-serif text-base font-bold text-slate-900 dark:text-white">P&amp;L, Budgeting &amp; Financial Performance</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-            Disciplined P&amp;L ownership, margin optimization, operating cost controls, and targeted sales productivity initiatives.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed jt">
+            Dis&shy;ci&shy;plined P&amp;L own&shy;er&shy;ship, margin opti&shy;miza&shy;tion, oper&shy;at&shy;ing cost con&shy;trols, and tar&shy;geted sales pro&shy;duc&shy;tiv&shy;ity ini&shy;tia&shy;tives.
           </p>
         </div>
 
@@ -778,8 +795,8 @@
             <i class="fa-solid fa-store"></i>
           </div>
           <h3 class="font-serif text-base font-bold text-slate-900 dark:text-white">Retail Strategy &amp; Commercial Transformation</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-            Spearheading Big Box (Volume &amp; Warehouse Retail), Network-Led Models, and Managed Retail Points for maximum footprint penetration.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed jt">
+            Spear&shy;head&shy;ing Big Box (Volume &amp; Ware&shy;house Retail), Net&shy;work-Led Models, and Man&shy;aged Retail Points for max&shy;i&shy;mum foot&shy;print pen&shy;e&shy;tra&shy;tion.
           </p>
         </div>
 
@@ -789,8 +806,8 @@
             <i class="fa-solid fa-chart-line"></i>
           </div>
           <h3 class="font-serif text-base font-bold text-slate-900 dark:text-white">Sales, Revenue &amp; Profitability Growth</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-            Demonstrated track record of delivering 1,140% monthly national revenue increases, 354% retail growth, and robust gross margin returns.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed jt">
+            Demon&shy;strated track record of deliv&shy;er&shy;ing 1,140% monthly national rev&shy;enue increases, 354% retail growth, and robust gross margin returns.
           </p>
         </div>
 
@@ -800,8 +817,8 @@
             <i class="fa-solid fa-magnifying-glass-chart"></i>
           </div>
           <h3 class="font-serif text-base font-bold text-slate-900 dark:text-white">Market Intelligence &amp; Competitor Analysis</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-            Catchment analysis, competitor mapping, consumer demographic studies, and real-time footfall optimization algorithms.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed jt">
+            Catch&shy;ment anal&shy;y&shy;sis, com&shy;peti&shy;tor map&shy;ping, con&shy;sumer demo&shy;graphic stud&shy;ies, and real-time foot&shy;fall opti&shy;miza&shy;tion algo&shy;rithms.
           </p>
         </div>
 
@@ -811,8 +828,8 @@
             <i class="fa-solid fa-network-wired"></i>
           </div>
           <h3 class="font-serif text-base font-bold text-slate-900 dark:text-white">Business Expansion &amp; Network Development</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-            Onboarding 1,010 stores across urban and suburban divisions, setting operational records by opening 30 stores/month consistently.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed jt">
+            Onboard&shy;ing 1,010 stores across urban and sub&shy;ur&shy;ban divi&shy;sions, set&shy;ting oper&shy;a&shy;tional records by open&shy;ing 30 stores/<wbr>month con&shy;sis&shy;tently.
           </p>
         </div>
 
@@ -822,8 +839,8 @@
             <i class="fa-solid fa-handshake"></i>
           </div>
           <h3 class="font-serif text-base font-bold text-slate-900 dark:text-white">Strategic Partnerships &amp; Stakeholder Management</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-            Cultivating high-value partner ecosystems that improve operational efficiency by 30% and secure sustainable commercial agreements.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed jt">
+            Cul&shy;ti&shy;vat&shy;ing high-value part&shy;ner ecosys&shy;tems that improve oper&shy;a&shy;tional effi&shy;ciency by 30% and secure sus&shy;tain&shy;able com&shy;mer&shy;cial agree&shy;ments.
           </p>
         </div>
 
@@ -833,8 +850,8 @@
             <i class="fa-solid fa-boxes-stacked"></i>
           </div>
           <h3 class="font-serif text-base font-bold text-slate-900 dark:text-white">Category Management &amp; Product Strategy</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-            Directing commercial strategy for Clothing, Electronics, Home Accessories, and Food departments with over 500+ new SKUs curated.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed jt">
+            Direct&shy;ing com&shy;mer&shy;cial strat&shy;egy for Cloth&shy;ing, Elec&shy;tron&shy;ics, Home Acces&shy;sories, and Food depart&shy;ments with over 500+ new SKUs curated.
           </p>
         </div>
 
@@ -844,8 +861,8 @@
             <i class="fa-solid fa-truck-ramp-box"></i>
           </div>
           <h3 class="font-serif text-base font-bold text-slate-900 dark:text-white">Sourcing, Procurement &amp; Supplier Management</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-            Decades of cross-border supplier development in China, India, Thailand, and Malaysia, ensuring 40% GP through rigorous negotiation.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed jt">
+            Decades of cross-border sup&shy;plier devel&shy;op&shy;ment in China, India, Thai&shy;land, and Malaysia, ensur&shy;ing 40% GP through rig&shy;or&shy;ous nego&shy;ti&shy;a&shy;tion.
           </p>
         </div>
 
@@ -855,8 +872,8 @@
             <i class="fa-solid fa-map-location-dot"></i>
           </div>
           <h3 class="font-serif text-base font-bold text-slate-900 dark:text-white">Real Estate &amp; Location Strategy</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-            Precision location due diligence and high-traffic site acquisitions, improving retail expansion success rates by over 20%.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed jt">
+            Pre&shy;ci&shy;sion loca&shy;tion due dili&shy;gence and high-traf&shy;fic site acqui&shy;si&shy;tions, improv&shy;ing retail expan&shy;sion suc&shy;cess rates by over 20%.
           </p>
         </div>
 
@@ -866,8 +883,8 @@
             <i class="fa-solid fa-gears"></i>
           </div>
           <h3 class="font-serif text-base font-bold text-slate-900 dark:text-white">Operational Excellence &amp; Process Improvement</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-            Architecting robust Standard Operating Procedures (SOPs), Balanced Scorecard (BSC) systems, and Batch/MTO/ETO production categorizations.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed jt">
+            Archi&shy;tect&shy;ing robust Stan&shy;dard Oper&shy;at&shy;ing Pro&shy;ce&shy;dures (SOPs), Bal&shy;anced Score&shy;card (BSC) sys&shy;tems, and Batch/<wbr>MTO/<wbr>ETO pro&shy;duc&shy;tion cat&shy;e&shy;go&shy;riza&shy;tions.
           </p>
         </div>
 
@@ -877,8 +894,8 @@
             <i class="fa-solid fa-users-gear"></i>
           </div>
           <h3 class="font-serif text-base font-bold text-slate-900 dark:text-white">Executive Leadership &amp; Change Management</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-            Institute of Business Administration (IBA) trained leadership: inspiring cross-functional teams, managing corporate restructuring, and coaching high performers.
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed jt">
+            Insti&shy;tute of Busi&shy;ness Admin&shy;is&shy;tra&shy;tion (IBA) trained lead&shy;er&shy;ship: inspir&shy;ing cross-func&shy;tional teams, man&shy;ag&shy;ing cor&shy;po&shy;rate restruc&shy;tur&shy;ing, and coach&shy;ing high per&shy;form&shy;ers.
           </p>
         </div>
 
@@ -950,14 +967,14 @@
             
             <p class="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-1">Enterprise Business Strategy, Growth &amp; Commercial Transformation</p>
 
-            <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600 dark:text-slate-300 list-disc list-inside">
-              <li>Lead business strategy, sustainable growth, commercial transformation, and long-term enterprise value creation.</li>
-              <li>Drive <strong class="text-slate-900 dark:text-white font-semibold">Big Box Retail Strategy</strong>, focusing on high-velocity Volume Retail and Warehouse Retail formats.</li>
-              <li>Transform national operations through the scalable <strong class="text-slate-900 dark:text-white font-semibold">Network-Led Model</strong> and Managed Retail Points.</li>
-              <li>Direct location intelligence, catchment analysis, competitor mapping, and real estate location due diligence.</li>
-              <li>Direct real estate acquisitions, strategic joint partnerships, and rapid business expansion.</li>
-              <li>Oversee commercial strategy across Clothing, Electronics, Home Accessories, and core FMCG categories.</li>
-              <li>Manage partner, supplier, vendor contracts, compliance protocols, and executive KPI performance.</li>
+            <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600 dark:text-slate-300 list-disc list-inside jt-list">
+              <li>Lead busi&shy;ness strat&shy;egy, sus&shy;tain&shy;able growth, com&shy;mer&shy;cial trans&shy;for&shy;ma&shy;tion, and long-term enter&shy;prise value cre&shy;ation.</li>
+              <li>Drive <strong class="text-slate-900 dark:text-white font-semibold">Big Box Retail Strat&shy;egy</strong>, focus&shy;ing on high-veloc&shy;ity Volume Retail and Ware&shy;house Retail for&shy;mats.</li>
+              <li>Trans&shy;form national oper&shy;a&shy;tions through the scal&shy;able <strong class="text-slate-900 dark:text-white font-semibold">Net&shy;work-Led Model</strong> and Man&shy;aged Retail Points.</li>
+              <li>Direct loca&shy;tion intel&shy;li&shy;gence, catch&shy;ment anal&shy;y&shy;sis, com&shy;peti&shy;tor map&shy;ping, and real estate loca&shy;tion due dili&shy;gence.</li>
+              <li>Direct real estate acqui&shy;si&shy;tions, strate&shy;gic joint part&shy;ner&shy;ships, and rapid busi&shy;ness expan&shy;sion.</li>
+              <li>Over&shy;see com&shy;mer&shy;cial strat&shy;egy across Cloth&shy;ing, Elec&shy;tron&shy;ics, Home Acces&shy;sories, and core FMCG cat&shy;e&shy;gories.</li>
+              <li>Manage part&shy;ner, sup&shy;plier, vendor con&shy;tracts, com&shy;pli&shy;ance pro&shy;to&shy;cols, and exec&shy;u&shy;tive KPI per&shy;for&shy;mance.</li>
             </ul>
 
             <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-700/60 bg-slate-50 dark:bg-obsidian-900/60 p-3.5 rounded text-[11px] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-champagne-500/10">
@@ -991,13 +1008,13 @@
             
             <p class="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-1">Nationwide Retail Operations, Budgeting, P&amp;L &amp; KPI Management</p>
 
-            <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600 dark:text-slate-300 list-disc list-inside">
-              <li>Directed end-to-end retail operations, strategic planning, nationwide budgeting, P&amp;L accountability, and KPI management.</li>
-              <li>Developed business strategies, standard operating procedures (SOPs), corporate policies, and institutional performance frameworks.</li>
-              <li>Led retail expansion, real estate acquisition, and seamless franchise/store onboarding nationwide.</li>
-              <li>Headed Market Intelligence, business research, supplier evaluation, and sourcing strategy.</li>
-              <li>Managed supplier contracts, commercial targets, and multi-tier strategic partnerships.</li>
-              <li>Led cross-functional teams to achieve aggressive sales, profitability, operational, and growth targets.</li>
+            <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600 dark:text-slate-300 list-disc list-inside jt-list">
+              <li>Directed end-to-end retail oper&shy;a&shy;tions, strate&shy;gic plan&shy;ning, nation&shy;wide bud&shy;get&shy;ing, P&amp;L account&shy;abil&shy;ity, and KPI man&shy;age&shy;ment.</li>
+              <li>Devel&shy;oped busi&shy;ness strate&shy;gies, stan&shy;dard oper&shy;at&shy;ing pro&shy;ce&shy;dures (SOPs), cor&shy;po&shy;rate poli&shy;cies, and insti&shy;tu&shy;tional per&shy;for&shy;mance frame&shy;works.</li>
+              <li>Led retail expan&shy;sion, real estate acqui&shy;si&shy;tion, and seam&shy;less fran&shy;chise/<wbr>store onboard&shy;ing nation&shy;wide.</li>
+              <li>Headed Market Intel&shy;li&shy;gence, busi&shy;ness research, sup&shy;plier eval&shy;u&shy;a&shy;tion, and sourc&shy;ing strat&shy;egy.</li>
+              <li>Man&shy;aged sup&shy;plier con&shy;tracts, com&shy;mer&shy;cial tar&shy;gets, and multi-tier strate&shy;gic part&shy;ner&shy;ships.</li>
+              <li>Led cross-func&shy;tional teams to achieve aggres&shy;sive sales, prof&shy;itabil&shy;ity, oper&shy;a&shy;tional, and growth tar&shy;gets.</li>
             </ul>
 
             <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-700/60 bg-slate-50 dark:bg-obsidian-900/60 p-3.5 rounded text-[11px] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-champagne-500/10">
@@ -1031,12 +1048,12 @@
             
             <p class="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-1">Company Operations, Financial Objectives &amp; Category Strategy</p>
 
-            <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600 dark:text-slate-300 list-disc list-inside">
-              <li>Directed overall company operations, operational budgets, sales execution, and financial objectives.</li>
-              <li>Managed retail operations to achieve sales targets and corporate expansion milestones.</li>
-              <li>Led strategic planning, budgeting, and operational policy development across divisions.</li>
-              <li>Conducted market and supplier analysis to support Non-Food Category strategy.</li>
-              <li>Negotiated supplier contracts and commercial terms to optimize global sourcing and value.</li>
+            <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600 dark:text-slate-300 list-disc list-inside jt-list">
+              <li>Directed over&shy;all com&shy;pany oper&shy;a&shy;tions, oper&shy;a&shy;tional bud&shy;gets, sales exe&shy;cu&shy;tion, and finan&shy;cial objec&shy;tives.</li>
+              <li>Man&shy;aged retail oper&shy;a&shy;tions to achieve sales tar&shy;gets and cor&shy;po&shy;rate expan&shy;sion mile&shy;stones.</li>
+              <li>Led strate&shy;gic plan&shy;ning, bud&shy;get&shy;ing, and oper&shy;a&shy;tional policy devel&shy;op&shy;ment across divi&shy;sions.</li>
+              <li>Con&shy;ducted market and sup&shy;plier anal&shy;y&shy;sis to sup&shy;port Non-Food Cat&shy;e&shy;gory strat&shy;egy.</li>
+              <li>Nego&shy;ti&shy;ated sup&shy;plier con&shy;tracts and com&shy;mer&shy;cial terms to opti&shy;mize global sourc&shy;ing and value.</li>
             </ul>
 
             <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-700/60 bg-slate-50 dark:bg-obsidian-900/60 p-3.5 rounded text-[11px] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-champagne-500/10">
@@ -1066,8 +1083,8 @@
               <h3 class="font-serif text-lg font-bold text-slate-900 dark:text-white">Chief Operating Officer - Retail</h3>
               <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-obsidian-800 text-slate-700 dark:text-slate-300 rounded border border-slate-300 dark:border-slate-700 font-semibold">BTI Retail Ltd</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-              Led Home D&eacute;cor business planning covering layout, product development, pricing, sourcing, and supply chain. Formulated commercial strategies aligned with market demand and implemented rigorous customer service policies to maximize operational efficiency.
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed jt">
+              Led Home D&eacute;cor busi&shy;ness plan&shy;ning cov&shy;er&shy;ing layout, prod&shy;uct devel&shy;op&shy;ment, pric&shy;ing, sourc&shy;ing, and supply chain. For&shy;mu&shy;lated com&shy;mer&shy;cial strate&shy;gies aligned with market demand and imple&shy;mented rig&shy;or&shy;ous cus&shy;tomer ser&shy;vice poli&shy;cies to max&shy;i&shy;mize oper&shy;a&shy;tional effi&shy;ciency.
             </p>
           </div>
         </div>
@@ -1087,11 +1104,11 @@
               <span class="text-xs px-2.5 py-1 bg-champagne-500/15 text-champagne-800 dark:text-champagne-300 rounded border border-champagne-600/30 dark:border-champagne-500/30 font-semibold">OTOBI Ltd</span>
             </div>
             <p class="text-xs font-semibold text-champagne-700 dark:text-champagne-400 mt-1">Managed Regional Operations: China, India, Thailand, and Malaysia</p>
-            <ul class="mt-2.5 space-y-1 text-xs text-slate-600 dark:text-slate-300 list-disc list-inside">
-              <li>Expanded India’s retail network by opening <strong>17 franchises and 3 company-owned showrooms</strong>.</li>
-              <li>Increased India sales <strong>5X, from BDT 1 Crore to BDT 5 Crore</strong> through strategic retail &amp; CRM initiatives.</li>
-              <li>Boosted annual company sales from <strong>BDT 95 Crore to BDT 554 Crore</strong>.</li>
-              <li>Optimized SKU management, inventory turnover, supplier pricing, and BPI analysis.</li>
+            <ul class="mt-2.5 space-y-1 text-xs text-slate-600 dark:text-slate-300 list-disc list-inside jt-list">
+              <li>Expanded India’s retail net&shy;work by open&shy;ing <strong>17 fran&shy;chises and 3 com&shy;pany-owned show&shy;rooms</strong>.</li>
+              <li>Increased India sales <strong>5X, from BDT 1 Crore to BDT 5 Crore</strong> through strate&shy;gic retail &amp; CRM ini&shy;tia&shy;tives.</li>
+              <li>Boosted annual com&shy;pany sales from <strong>BDT 95 Crore to BDT 554 Crore</strong>.</li>
+              <li>Opti&shy;mized SKU man&shy;age&shy;ment, inven&shy;tory turnover, sup&shy;plier pric&shy;ing, and BPI anal&shy;y&shy;sis.</li>
             </ul>
           </div>
         </div>
@@ -1110,8 +1127,8 @@
               <h3 class="font-serif text-lg font-bold text-slate-900 dark:text-white">Regional Head of CRM (Southeast Asia)</h3>
               <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-obsidian-800 text-slate-700 dark:text-slate-300 rounded border border-slate-300 dark:border-slate-700 font-semibold">OTOBI Ltd</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-              Achieved 110%+ of sales targets across 110 showrooms. Increased monthly sales from BDT 30 Crore to BDT 55 Crore through SKU and inventory optimization, and expanded dealer footprints using data-driven market analyses.
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed jt">
+              Achieved 110%+ of sales tar&shy;gets across 110 show&shy;rooms. Increased monthly sales from BDT 30 Crore to BDT 55 Crore through SKU and inven&shy;tory opti&shy;miza&shy;tion, and expanded dealer foot&shy;prints using data-driven market analy&shy;ses.
             </p>
           </div>
         </div>
@@ -1130,8 +1147,8 @@
               <h3 class="font-serif text-lg font-bold text-slate-900 dark:text-white">Country Representative (China) &amp; Head of Category Management</h3>
               <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-obsidian-800 text-slate-700 dark:text-slate-300 rounded border border-slate-300 dark:border-slate-700 font-semibold">OTOBI Ltd (Bangladesh &amp; India)</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-              Built a resilient direct China supplier network. Managed end-to-end China operations including sourcing, commercial negotiation, quality inspection, and category management. Introduced Balanced Scorecard (BSC) in sales to boost team accountability.
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed jt">
+              Built a resilient direct China sup&shy;plier net&shy;work. Man&shy;aged end-to-end China oper&shy;a&shy;tions includ&shy;ing sourc&shy;ing, com&shy;mer&shy;cial nego&shy;ti&shy;a&shy;tion, qual&shy;ity inspec&shy;tion, and cat&shy;e&shy;gory man&shy;age&shy;ment. Intro&shy;duced Bal&shy;anced Score&shy;card (BSC) in sales to boost team account&shy;abil&shy;ity.
             </p>
           </div>
         </div>
@@ -1150,8 +1167,8 @@
               <h3 class="font-serif text-lg font-bold text-slate-900 dark:text-white">Head of Category Management</h3>
               <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-obsidian-800 text-slate-700 dark:text-slate-300 rounded border border-slate-300 dark:border-slate-700 font-semibold">OTOBI Ltd</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-              Diversified product portfolio by introducing the Wooden Product Line. Launched Value Series including the breakthrough Tk 1,100 computer table (selling 60,000 units), introduced 4 new product lines, and onboarded 500 new SKUs.
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed jt">
+              Diver&shy;si&shy;fied prod&shy;uct port&shy;fo&shy;lio by intro&shy;duc&shy;ing the Wooden Prod&shy;uct Line. Launched Value Series includ&shy;ing the break&shy;through Tk 1,100 com&shy;puter table (sell&shy;ing 60,000 units), intro&shy;duced 4 new prod&shy;uct lines, and onboarded 500 new SKUs.
             </p>
           </div>
         </div>
@@ -1170,8 +1187,8 @@
               <h3 class="font-serif text-lg font-bold text-slate-900 dark:text-white">Head of Business Development</h3>
               <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-obsidian-800 text-slate-700 dark:text-slate-300 rounded border border-slate-300 dark:border-slate-700 font-semibold">OTOBI Ltd</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-              Restructured business operations into 3 Strategic Business Units (SBUs): <strong>Retail, Corporate, and Interior</strong>. Streamlined manufacturing into Batch, Make-to-Order (MTO), and Engineer-to-Order (ETO) workflows.
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed jt">
+              Restruc&shy;tured busi&shy;ness oper&shy;a&shy;tions into 3 Strate&shy;gic Busi&shy;ness Units (SBUs): <strong>Retail, Cor&shy;po&shy;rate, and Inte&shy;rior</strong>. Stream&shy;lined man&shy;u&shy;fac&shy;tur&shy;ing into Batch, Make-to-Order (MTO), and Engi&shy;neer-to-Order (ETO) work&shy;flows.
             </p>
           </div>
         </div>
@@ -1190,8 +1207,8 @@
               <h3 class="font-serif text-lg font-bold text-slate-900 dark:text-white">Import Manager</h3>
               <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-obsidian-800 text-slate-700 dark:text-slate-300 rounded border border-slate-300 dark:border-slate-700 font-semibold">OTOBI Ltd</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-              Achieved sales targets with 40% Gross Profit through effective sourcing and pricing negotiations. Built extensive supplier networks across China through direct visits, vendor development, and precise inventory forecasting.
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed jt">
+              Achieved sales tar&shy;gets with 40% Gross Profit through effec&shy;tive sourc&shy;ing and pric&shy;ing nego&shy;ti&shy;a&shy;tions. Built exten&shy;sive sup&shy;plier net&shy;works across China through direct visits, vendor devel&shy;op&shy;ment, and pre&shy;cise inven&shy;tory fore&shy;cast&shy;ing.
             </p>
           </div>
         </div>
@@ -1210,8 +1227,8 @@
               <h3 class="font-serif text-lg font-bold text-slate-900 dark:text-white">Retail Manager</h3>
               <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-obsidian-800 text-slate-700 dark:text-slate-300 rounded border border-slate-300 dark:border-slate-700 font-semibold">OTOBI Ltd</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-              Increased retail sales from BDT 55 Lakh to BDT 2.5 Crore (<strong>354% growth</strong>) via strategic target allocation, high-touch client relationships, and sales team target tracking.
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed jt">
+              Increased retail sales from BDT 55 Lakh to BDT 2.5 Crore (<strong>354% growth</strong>) via strate&shy;gic target allo&shy;ca&shy;tion, high-touch client rela&shy;tion&shy;ships, and sales team target track&shy;ing.
             </p>
           </div>
         </div>
@@ -1230,8 +1247,8 @@
               <h3 class="font-serif text-lg font-bold text-slate-900 dark:text-white">Manager, Sales and Marketing</h3>
               <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-obsidian-800 text-slate-700 dark:text-slate-300 rounded border border-slate-300 dark:border-slate-700 font-semibold">P.Q.S Super Centre</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-              Increased annual supermarket sales from BDT 2 Crore to BDT 5 Crore through strategic promotions and retail floor management. Successfully launched 2 new showrooms in Dhaka.
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed jt">
+              Increased annual super&shy;mar&shy;ket sales from BDT 2 Crore to BDT 5 Crore through strate&shy;gic pro&shy;mo&shy;tions and retail floor man&shy;age&shy;ment. Suc&shy;cess&shy;fully launched 2 new show&shy;rooms in Dhaka.
             </p>
           </div>
         </div>
@@ -1250,8 +1267,8 @@
               <h3 class="font-serif text-lg font-bold text-slate-900 dark:text-white">Territory Sales Officer, Sales and Marketing</h3>
               <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-obsidian-800 text-slate-700 dark:text-slate-300 rounded border border-slate-300 dark:border-slate-700 font-semibold">Aquamarine Distributions Ltd (Gillette Division)</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-              Achieved 100% sales targets and expanded Gillette distribution to 5,000+ new retail shops in Dhaka. Secured landmark corporate B2B supply agreements with Renata, Cool (Square), and Lever Brothers.
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed jt">
+              Achieved 100% sales tar&shy;gets and expanded Gillette dis&shy;tri&shy;bu&shy;tion to 5,000+ new retail shops in Dhaka. Secured land&shy;mark cor&shy;po&shy;rate B2B supply agree&shy;ments with Renata, Cool (Square), and Lever Broth&shy;ers.
             </p>
           </div>
         </div>
@@ -1270,8 +1287,8 @@
               <h3 class="font-serif text-lg font-bold text-slate-900 dark:text-white">Territory Manager, Sales and Marketing</h3>
               <span class="text-xs px-2.5 py-1 bg-champagne-500/15 text-champagne-800 dark:text-champagne-300 rounded border border-champagne-600/30 dark:border-champagne-500/30 font-semibold">Mutual Trading Company Ltd. (Dano)</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-              Achieved 115% of BDT 25 Lakh target and earned the prestigious <strong class="text-slate-900 dark:text-white font-semibold">"Best TO of the Year (Nationwide)"</strong> award. Formally <strong class="text-champagne-700 dark:text-champagne-300 font-semibold">Certified by Denmark</strong> for delivering 150% of the target and maximizing visibility across 20,000 General Trade (GT) outlets.
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed jt">
+              Achieved 115% of BDT 25 Lakh target and earned the pres&shy;ti&shy;gious <strong class="text-slate-900 dark:text-white font-semibold">"Best TO of the Year (Nation&shy;wide)"</strong> award. For&shy;mally <strong class="text-champagne-700 dark:text-champagne-300 font-semibold">Cer&shy;ti&shy;fied by Den&shy;mark</strong> for deliv&shy;er&shy;ing 150% of the target and max&shy;i&shy;miz&shy;ing vis&shy;i&shy;bil&shy;ity across 20,000 Gen&shy;eral Trade (GT) out&shy;lets.
             </p>
           </div>
         </div>
@@ -1312,28 +1329,28 @@
               <span class="text-[10px] uppercase font-bold tracking-widest text-champagne-700 dark:text-champagne-400">Jan – Jun 2017 &bull; Executive Flagship</span>
               <h4 class="text-base font-bold text-slate-900 dark:text-white mt-1">Advanced Certificate in Business Administration (ACBA)</h4>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">Institute of Business Administration (IBA), University of Dhaka</p>
-              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">Comprehensive executive program encompassing strategic finance, leadership economics, organizational governance, and marketing strategy.</p>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 jt">Com&shy;pre&shy;hen&shy;sive exec&shy;u&shy;tive pro&shy;gram encom&shy;pass&shy;ing strate&shy;gic finance, lead&shy;er&shy;ship eco&shy;nom&shy;ics, orga&shy;ni&shy;za&shy;tional gov&shy;er&shy;nance, and mar&shy;ket&shy;ing strat&shy;egy.</p>
             </div>
 
             <div class="dark-card p-5 rounded-lg border-l-4 border-l-slate-400 dark:border-l-slate-600">
               <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500 dark:text-slate-400">Jan – Feb 2017</span>
               <h4 class="text-base font-bold text-slate-900 dark:text-white mt-1">Competitive Business Strategy &amp; Innovation (CBSI)</h4>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">Institute of Business Administration (IBA), University of Dhaka</p>
-              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">Focused on strategic moat formulation, disruptive innovation frameworks, and value-chain defensibility.</p>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 jt">Focused on strate&shy;gic moat for&shy;mu&shy;la&shy;tion, dis&shy;rup&shy;tive inno&shy;va&shy;tion frame&shy;works, and value-chain defen&shy;si&shy;bil&shy;ity.</p>
             </div>
 
             <div class="dark-card p-5 rounded-lg border-l-4 border-l-slate-400 dark:border-l-slate-600">
               <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500 dark:text-slate-400">Aug – Sep 2016</span>
               <h4 class="text-base font-bold text-slate-900 dark:text-white mt-1">Leadership Certificate in Managerial Communication (LCMC)</h4>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">Institute of Business Administration (IBA), University of Dhaka</p>
-              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">High-level managerial rhetoric, conflict resolution, institutional negotiations, and stakeholder alignment.</p>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 jt">High-level man&shy;age&shy;rial rhetoric, con&shy;flict res&shy;o&shy;lu&shy;tion, insti&shy;tu&shy;tional nego&shy;ti&shy;a&shy;tions, and stake&shy;holder align&shy;ment.</p>
             </div>
 
             <div class="dark-card p-5 rounded-lg border-l-4 border-l-slate-400 dark:border-l-slate-600">
               <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500 dark:text-slate-400">May 2016</span>
               <h4 class="text-base font-bold text-slate-900 dark:text-white mt-1">Leadership &amp; Change Management</h4>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">Institute of Business Administration (IBA), University of Dhaka</p>
-              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">Leading large enterprise workforce reorganizations, cultural turnaround, and performance alignment.</p>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 jt">Lead&shy;ing large enter&shy;prise work&shy;force reor&shy;ga&shy;ni&shy;za&shy;tions, cul&shy;tural turn&shy;around, and per&shy;for&shy;mance align&shy;ment.</p>
             </div>
 
           </div>
@@ -1380,7 +1397,7 @@
               <div>
                 <h5 class="text-xs font-bold text-slate-900 dark:text-white">HACCP Certification (2016–2019)</h5>
                 <p class="text-[11px] text-slate-500 dark:text-slate-400">The Chartered Institute of Environmental Health &bull; License No. 9932692</p>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Certified in Hazard Analysis Critical Control Point for modern retail &amp; food preservation.</p>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 jt">Cer&shy;ti&shy;fied in Hazard Anal&shy;y&shy;sis Crit&shy;i&shy;cal Con&shy;trol Point for modern retail &amp; food preser&shy;va&shy;tion.</p>
               </div>
             </div>
 
@@ -1430,8 +1447,8 @@
             Direct Executive Channel &amp; Corporate Office
           </h2>
 
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed text-justify">
-            Open for dialogue regarding C-suite leadership roles (Chief Business Officer / CEO / Managing Director), strategic retail transformations, commercial partnerships, and board advisory.
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed text-justify jt">
+            Open for dia&shy;logue regard&shy;ing C-suite lead&shy;er&shy;ship roles (Chief Busi&shy;ness Offi&shy;cer / CEO / Man&shy;ag&shy;ing Direc&shy;tor), strate&shy;gic retail trans&shy;for&shy;ma&shy;tions, com&shy;mer&shy;cial part&shy;ner&shy;ships, and board advi&shy;sory.
           </p>
 
           <div class="space-y-4 pt-2">
@@ -1639,8 +1656,8 @@
           </div>
         </div>
 
-        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-          This dossier documents verified career achievements including achieving 1,140% monthly national sales growth (BDT 25 Cr to BDT 310 Cr), onboarding 1,010 retail stores, elevating Shwapno from No. 3 to No. 1, and directing regional Southeast Asian operations across China, India, Thailand, and Malaysia.
+        <p class="text-slate-600 dark:text-slate-300 leading-relaxed jt">
+          This dossier doc&shy;u&shy;ments ver&shy;i&shy;fied career achieve&shy;ments includ&shy;ing achiev&shy;ing 1,140% monthly national sales growth (BDT 25 Cr to BDT 310 Cr), onboard&shy;ing 1,010 retail stores, ele&shy;vat&shy;ing Shwapno from No. 3 to No. 1, and direct&shy;ing regional South&shy;east Asian oper&shy;a&shy;tions across China, India, Thai&shy;land, and Malaysia.
         </p>
       </div>
 
